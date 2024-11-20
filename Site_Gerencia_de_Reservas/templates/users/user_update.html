@@ -1,0 +1,46 @@
+{% extends "users/_base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+  Atualizar perfil
+{% endblock title %}
+{% block page_name %}
+  Atualizar perfil
+{% endblock page_name %}
+{% block page_breadcrumbs %}
+  {{ block.super }}
+  <li class="breadcrumb-item active">Atualizar perfil</li>
+{% endblock page_breadcrumbs %}
+{% block content %}
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-primary card-outline">
+        <form method="post"
+              enctype="multipart/form-data"
+              action="{% url 'users:user_update' user.pk %}"
+              novalidate>
+          {% csrf_token %}
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                {{ form_user.first_name|as_crispy_field }}
+                {{ form_user.last_name|as_crispy_field }}
+                {{ form_profile.curso|as_crispy_field }}
+                {{ form_profile.modo_escuro|as_crispy_field }}
+              </div>
+              <div class="col-md-6">
+                {{ form_profile.nacionalidade|as_crispy_field }}
+                {{ form_profile.data_nascimento|as_crispy_field }}
+                {{ form_profile.foto_perfil|as_crispy_field }}
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'users:user_detail' user.pk %}"
+               class="btn btn-secondary float-left">Voltar</a>
+            <button type="submit" class="btn btn-primary float-right">Atualizar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,22 @@
+.column-id {
+  width: 50px;
+}
+
+.column-small {
+  width: 80px;
+}
+
+.column-medium {
+  width: 100px;
+}
+
+.column-large {
+  width: 150px;
+}
+
+.small-chart {
+  min-height: 250px;
+  height: 250px;
+  max-height: 250px;
+  max-width: 100%;
+}

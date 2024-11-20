@@ -1,0 +1,30 @@
+{% extends "recursos/oculus_vr/_base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+  Adicionar Oculus VR
+{% endblock title %}
+{% block page_name %}
+  Adicionar Oculus VR
+{% endblock page_name %}
+{% block page_breadcrumbs %}
+  {{ block.super }}
+  <li class="breadcrumb-item active">Adicionar</li>
+{% endblock page_breadcrumbs %}
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <form method="post">
+          {% csrf_token %}
+          <div class="card-body">{{ form|crispy }}</div>
+          <div class="card-footer">
+            <a href="{% url 'recursos:oculus_vr_list' %}"
+               class="btn btn-secondary float-left">Voltar</a>
+            <button type="submit" class="btn btn-primary float-right">Adicionar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

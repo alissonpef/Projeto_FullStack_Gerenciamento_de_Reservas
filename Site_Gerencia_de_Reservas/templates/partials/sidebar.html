@@ -1,0 +1,136 @@
+{% load static i18n %}
+{% load utils_tags %}
+<aside class="main-sidebar sidebar-dark-primary nav-child-indent elevation-1">
+  <a href="{% url 'dashboard:index' %}" class="brand-link">
+    <img src="{% static 'images/logo_icon.svg' %}"
+         alt="logo"
+         class="brand-image img-circle elevation-3"
+         width=""
+         height="">
+    <span class="brand-text font-weight-bold">LabTec - UFSC</span>
+  </a>
+  <div class="sidebar">
+    <div class="form-inline mt-3">
+      <div class="input-group" data-widget="sidebar-search">
+        <input class="form-control form-control-sidebar"
+               type="search"
+               placeholder="Search"
+               aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-sidebar">
+            <i class="fas fa-search fa-fw"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <nav class="mt-3">
+      <ul class="nav nav-pills nav-sidebar flex-column"
+          data-widget="treeview"
+          role="menu"
+          data-accordion="false">
+        <li class="nav-item">
+          <a href="{% url 'dashboard:index' %}"
+             class="nav-link {% is_active 'dashboard:index' %}">
+            <i class="nav-icon fas fa-th"></i>
+            <p>{% translate "Dashboard" %}</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'dashboard:consultas' %}"
+             class="nav-link {% is_active 'dashboard:consultas' %}">
+            <i class="nav-icon fas fa-chart-line"></i>
+            <p>{% translate "Consultas" %}</p>
+          </a>
+        </li>
+        {% if user.is_staff %}
+          <li class="nav-header mt-2">Recursos</li>
+          <li class="nav-item">
+            <a href="{% url 'recursos:computador_list' %}"
+               class="nav-link {% is_active 'recursos:computador_list' %}">
+              <i class="nav-icon fas fa-desktop"></i>
+              <p>Computadores</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'recursos:tablet_list' %}"
+               class="nav-link {% is_active 'recursos:tablet_list' %}">
+              <i class="nav-icon fas fa-tablet-alt"></i>
+              <p>Tablets</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'recursos:kit_tablet_list' %}"
+               class="nav-link {% is_active 'recursos:kit_tablet_list' %}">
+              <i class="nav-icon fas fa-briefcase"></i>
+              <p>Kits Tablets</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'recursos:oculus_vr_list' %}"
+               class="nav-link {% is_active 'recursos:oculus_vr_list' %}">
+              <i class="nav-icon fas fa-vr-cardboard"></i>
+              <p>Oculus VR</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'recursos:mesa_trabalho_list' %}"
+               class="nav-link {% is_active 'recursos:mesa_trabalho_list' %}">
+              <i class="nav-icon fas fa-microchip"></i>
+              <p>Mesas de Trabalho</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'recursos:sala_reuniao_list' %}"
+               class="nav-link {% is_active 'recursos:sala_reuniao_list' %}">
+              <i class="nav-icon fas fa-chalkboard"></i>
+              <p>Salas de Reunião</p>
+            </a>
+          </li>
+        {% endif %}
+        <li class="nav-header mt-2">Reservas</li>
+        <li class="nav-item">
+          <a href="{% url 'reservas:reserva_computador_list' %}"
+             class="nav-link {% is_active 'reservas:reserva_computador_list' %}">
+            <i class="nav-icon fas fa-desktop"></i>
+            <p>Computadores</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'reservas:reserva_tablet_list' %}"
+             class="nav-link {% is_active 'reservas:reserva_tablet_list' %}">
+            <i class="nav-icon fas fa-tablet-alt"></i>
+            <p>Tablets</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'reservas:reserva_kit_tablet_list' %}"
+             class="nav-link {% is_active 'reservas:reserva_kit_tablet_list' %}">
+            <i class="nav-icon fas fa-briefcase"></i>
+            <p>Kits Tablets</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'reservas:reserva_oculus_vr_list' %}"
+             class="nav-link {% is_active 'reservas:reserva_oculus_vr_list' %}">
+            <i class="nav-icon fas fa-vr-cardboard"></i>
+            <p>Oculus VR</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'reservas:reserva_mesa_trabalho_list' %}"
+             class="nav-link {% is_active 'reservas:reserva_mesa_trabalho_list' %}">
+            <i class="nav-icon fas fa-microchip"></i>
+            <p>Mesas de Trabalho</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'reservas:reserva_sala_reuniao_list' %}"
+             class="nav-link {% is_active 'reservas:reserva_sala_reuniao_list' %}">
+            <i class="nav-icon fas fa-chalkboard"></i>
+            <p>Salas de Reunião</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>
