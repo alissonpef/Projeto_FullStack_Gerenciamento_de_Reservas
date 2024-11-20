@@ -58,4 +58,4 @@ Os administradores poderão visualizar todas as reservas realizadas, garantindo 
 
 ## **Resumindo:**  
 
-Em resumo, o sistema inclui o cadastro e armazenamento de dados dos usuários, a gestão via Painel Administrativo, armazenamento detalhado dos recursos disponíveis e o gerenciamento de reservas pelos usuários. O sistema foi implementado usando um modelo relacional no banco de dados PostgreSQL, garantindo uma base robusta e flexível para o desenvolvimento contínuo do sistema, permitindo um funcionamento fluido e a capacidade de expansão futura.
+Em resumo, o sistema inclui o cadastro e armazenamento de dados dos usuários, a gestão via Painel Administrativo, armazenamento detalhado dos recursos disponíveis e o gerenciamento de reservas pelos usuários. O sistema foi implementado usando um modelo relacional no banco de dados PostgreSQL, garantindo uma base flexível para o desenvolvimento do sistema, permitindo a capacidade de expansão futura.
