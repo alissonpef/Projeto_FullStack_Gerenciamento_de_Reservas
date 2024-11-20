@@ -56,6 +56,14 @@ Os administradores poderão visualizar todas as reservas realizadas, garantindo 
 - 🖥️ **pgAdmin**: Interface gráfica para gerenciamento e administração do PostgreSQL.
 - 🧑‍💻 **brModelo**: Ferramenta de modelagem de banco de dados usada para criar o diagrama relacional.
 
+## Modelagem Conceitual
+
+![image](https://github.com/user-attachments/assets/f240b36e-814c-4292-8ed5-3c2f9a0fbeef)
+
+## Modelagem Lógica
+
+![image](https://github.com/user-attachments/assets/0055af30-4e02-4f37-87d2-6eb70d4362ae)
+
 ## **Resumindo:**  
 
 Em resumo, o sistema inclui o cadastro e armazenamento de dados dos usuários, a gestão via Painel Administrativo, armazenamento detalhado dos recursos disponíveis e o gerenciamento de reservas pelos usuários. O sistema foi implementado usando um modelo relacional no banco de dados PostgreSQL, garantindo uma base flexível para o desenvolvimento do sistema, permitindo a capacidade de expansão futura.
