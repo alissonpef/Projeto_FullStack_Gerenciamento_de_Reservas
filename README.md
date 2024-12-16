@@ -1,14 +1,30 @@
-# Sistema de Gerenciamento de Reservas
+# **Sistema de Gerenciamento de Reservas**
 
-## Descrição
-
-O objetivo geral deste sistema de gerenciamento de reservas do **LabTec** é fornecer uma plataforma robusta onde os usuários possam acessar e reservar uma variedade de recursos disponíveis no laboratório, como computadores, tablets, óculos VR, mesas de trabalho e mesas de reunião. O sistema visa oferecer uma experiência intuitiva e eficiente, permitindo aos usuários explorar e reservar os recursos conforme suas necessidades, garantindo também a gestão eficiente e organizada dos dados por meio de um banco de dados bem estruturado.
+Plataforma completa para a gestão de reservas de recursos do **LabTec**, incluindo computadores, tablets, óculos VR, mesas de trabalho e salas de reunião. Desenvolvido para oferecer uma experiência intuitiva, o sistema permite um controle centralizado e organizado por meio de uma interface web e um banco de dados robusto.
 
 ---
 
-## 👥 Integrantes do Projeto
+## **Sumário**
 
-- **Alisson Pereira Ferreira**
+1. [Visão Geral](#visão-geral)  
+2. [Equipe Responsável](#equipe-responsável)  
+3. [Principais Funcionalidades](#principais-funcionalidades)  
+4. [Tecnologias Utilizadas](#tecnologias-utilizadas)  
+5. [Estrutura do Repositório](#estrutura-do-repositório)  
+6. [Como Executar](#como-executar)  
+7. [Conclusão](#conclusão)
+
+---
+
+## **Visão Geral**
+
+O **Sistema de Gerenciamento de Reservas** foi projetado para atender às necessidades do **LabTec**, permitindo que usuários (alunos, professores e funcionários) possam reservar recursos de forma eficiente e organizada. Cada recurso conta com informações detalhadas e atualizadas, enquanto a administração do sistema é centralizada em um painel que facilita a gestão de permissões e a análise de conflitos de reserva.
+
+---
+
+## **Equipe Responsável**
+
+- **Alisson Pereira Ferreira**  
 - **Dennis Paul Paz Lopez**
 
 **Universidade Federal de Santa Catarina (UFSC) – Campus Araranguá**  
@@ -16,101 +32,104 @@ Caixa Postal 88.905-120 – Araranguá – SC – Brasil
 
 ---
 
-## ⚙️ Funcionalidades
+## **Principais Funcionalidades**
 
-### Identificação dos Usuários
+1. **Identificação de Usuários**  
+   - Cadastro de novos usuários com dados pessoais (nome, sobrenome, CPF, e-mail, senha) e informações adicionais (curso, nacionalidade, data de nascimento, foto de perfil, preferência de tema).
+   - Função de recuperação de senha.
 
-Cada usuário do sistema terá as seguintes informações armazenadas no banco de dados:
+2. **Painel Administrativo**  
+   - Gerenciamento de usuários: adicionar, remover e editar informações.
+   - Definição de permissões e busca filtrada para localizar usuários específicos.
 
-- 📧 **Dados Pessoais**: e-mail, senha, nome, sobrenome, CPF.
-- 📝 **Informações Adicionais**: curso, nacionalidade, data de nascimento, foto de perfil e preferência pelo modo escuro ou claro.
+3. **Gerenciamento de Recursos**  
+   - **Computadores**: modelo, processador, memória RAM, placa de vídeo, armazenamento e estado de dano.
+   - **Kits de Tablets**: tablet associado, presença de caneta, teclado, mouse e estado de dano.
+   - **Mesas de Trabalho**: número, presença de monitor, mousepad, fone de ouvido e estado de dano.
+   - **Óculos VR**: número, modelo, marca, resolução e estado de dano.
+   - **Salas de Reunião**: número, quantidade de mesas/cadeiras, projetor, quadro e estado de dano.
+   - **Tablets**: modelo, marca, tamanho de tela, sistema operacional, armazenamento e estado de dano.
 
-Os usuários serão criados por meio de um formulário simples com campos para nome, e-mail e senha. Haverá uma opção para recuperação de senha caso o usuário esqueça a senha.
-
-### Gestão Centralizada via Painel Administrativo
-
-Os administradores terão acesso a um **Painel Administrativo** que permitirá:
-
-- 👤 **Gerenciamento de Usuários**: adicionar, remover, editar informações e gerenciar permissões dos usuários.
-- 🔍 **Busca Filtrada**: realizar buscas filtradas para encontrar usuários específicos ou grupos de usuários com base em diferentes critérios.
-
-### Armazenamento Detalhado dos Recursos Disponíveis
-
-O sistema armazenará informações detalhadas sobre os seguintes recursos:
-
-- 💻 **Computadores**: número, processador, memória RAM, placa de vídeo, armazenamento, sistemas operacionais, disponibilidade de fone de ouvido e estado de dano.
-- 📱 **Kits de Tablets**: presença de caneta, teclado, mouse, estado de dano e referência ao tablet associado.
-- 🪑 **Mesas de Trabalho**: número, presença de monitor, mousepad, fone de ouvido e estado de dano.
-- 🕶️ **Óculos VR**: número, modelo, marca, resolução e estado de dano.
-- 🏢 **Salas de Reunião**: número, quantidade de mesas e cadeiras, presença de projetor e quadro, e estado de dano.
-- 📲 **Tablets**: número, modelo, marca, tamanho da tela, sistema operacional, armazenamento e estado de dano.
-
-### Gerenciamento de Reservas pelos Usuários
-
-Os usuários poderão reservar os recursos mencionados acima para um horário específico em um determinado dia, com as seguintes regras para reservar:
-
-- 🗓️ **Reservas Futuras**: Reservas só podem ser feitas para o presente e futuro, nunca para datas passadas.
-- 🚫 **Conflito de Reservas**: Um recurso não pode ser reservado por mais de uma pessoa ao mesmo tempo.
-
-Os administradores poderão visualizar todas as reservas realizadas, garantindo um gerenciamento eficiente e a disponibilidade adequada dos recursos.
+4. **Reservas de Recursos**  
+   - Agendamento para datas e horários futuros.
+   - Prevenção de conflitos de reservas (um mesmo recurso não pode ser reservado simultaneamente por duas pessoas).
+   - Visualização completa de todas as reservas no painel administrativo.
 
 ---
 
-## 🛠️ Componentes Utilizados
+## **Tecnologias Utilizadas**
 
-- 💻 **VSCode**: Ambiente de desenvolvimento utilizado para a codificação do sistema.
-- 🐘 **PostgreSQL**: Banco de dados relacional utilizado para armazenar os dados do sistema.
-- 🖥️ **pgAdmin**: Interface gráfica para gerenciamento e administração do PostgreSQL.
-- 🧑‍💻 **brModelo**: Ferramenta de modelagem de banco de dados usada para criar o diagrama relacional.
+- **Python** (Backend e Aplicação Web)
+- **PostgreSQL** (Banco de Dados Relacional)
+- **pgAdmin** (Administração do Banco de Dados)
+- **brModelo** (Modelagem de Banco de Dados)
+- **VSCode** (Ambiente de Desenvolvimento)
 
 ---
 
-## 🛠️ Como Executar
-
-### 1. Clonar o Repositório
+## **Estrutura do Repositório**
 
 ```bash
-git clone https://github.com/alissonpef/Projeto_Sistema_de_Gerenciamento_de_Reservas.git
-```
+Projeto_Sistema_de_Gerenciamento_de_Reservas
+├── apps/                 # Aplicativos principais do sistema
+├── config/               # Configurações do projeto
+├── requirements/         # Dependências adicionais organizadas
+├── static/               # Arquivos estáticos (CSS, JS, imagens)
+├── templates/            # Templates HTML para renderização
+├── .editorconfig         # Configurações do editor de código
+├── .gitattributes        # Configurações do Git
+├── .gitignore            # Arquivos e pastas ignorados pelo Git
+├── LICENSE               # Licença do projeto
+├── Procfile              # Configuração para o Heroku ou serviços semelhantes
+├── manage.py             # Script principal para gerenciamento do projeto
+├── requirements.txt      # Dependências do Python necessárias para execução
+├── runtime.txt           # Versão do ambiente de execução (Heroku, etc.)
+└── script.sh             # Script auxiliar para automação de tarefas
 
-### 2. Configurar o Banco de Dados PostgreSQL
-
-- Crie um banco de dados chamado `reservas_labtec` no PostgreSQL.
-- Utilize o arquivo `schema.sql` localizado na pasta `Site_Gerencia_de_Reservas` para configurar as tabelas:
-
-```bash
-psql -U seu_usuario -d reservas_labtec -f Site_Gerencia_de_Reservas/schema.sql
-```
-
-### 3. Configurar o Ambiente de Desenvolvimento
-
-Certifique-se de ter o Python instalado e configure as dependências do servidor:
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Iniciar o Servidor
-
-Navegue até o diretório `Site_Gerencia_de_Reservas` e execute o servidor:
-
-```bash
-python app.py
-```
-
-### 5. Acessar o Sistema
-
-Abra o navegador e acesse o sistema em:
-
-```
-http://localhost:5000
 ```
 
 ---
 
-## 🌟 Resumindo
+## **Como Executar**
 
-O **Sistema de Gerenciamento de Reservas** oferece uma solução completa para a gestão de recursos do **LabTec**, com funcionalidades de cadastro de usuários, painel administrativo, armazenamento detalhado de recursos e gerenciamento de reservas. Implementado com um banco de dados PostgreSQL e uma interface eficiente, o sistema é intuitivo e flexível para atender às necessidades de expansão futura.
+1. **Clonar o Repositório**
+   ```bash
+    git clone https://github.com/alissonpef/Projeto_FullStack_Controle_de_Acesso_a_Portas.git
+   ```
+
+2. **Configurar o Banco de Dados PostgreSQL**
+   - Crie um banco de dados chamado `reservas_labtec`.
+   - Importe o script `schema.sql` localizado em `Site_Gerencia_de_Reservas/`:
+     ```bash
+     psql -U seu_usuario -d reservas_labtec -f Site_Gerencia_de_Reservas/schema.sql
+     ```
+
+3. **Instalar Dependências**
+   - Garanta que você tenha Python instalado.
+   - Navegue até a pasta `Site_Gerencia_de_Reservas` e instale os requisitos:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+4. **Iniciar o Servidor**
+   - Ainda na pasta `Site_Gerencia_de_Reservas`, execute:
+     ```bash
+     python app.py
+     ```
+   - O sistema estará acessível em:
+     ```
+     http://localhost:5000
+     ```
+
+5. **Acessar e Testar o Sistema**
+   - Abra o navegador e acesse `http://localhost:5000`.
+   - Utilize as credenciais de teste (se existirem) ou crie um novo usuário para testar as funcionalidades de cadastro, login e reserva.
+
+---
+
+## **Conclusão**
+
+O **Sistema de Gerenciamento de Reservas** oferece uma solução centralizada e segura para administrar os recursos do **LabTec**, permitindo que administradores gerenciem usuários e monitorem reservas, enquanto os usuários usufruem de uma interface intuitiva para realizar agendamentos. Com um backend em Python e um banco de dados PostgreSQL, o sistema está preparado para escalabilidade e futuras integrações. Sugestões ou melhorias podem ser encaminhadas via *issues* ou *pull requests* neste repositório.
 
 ---
 
